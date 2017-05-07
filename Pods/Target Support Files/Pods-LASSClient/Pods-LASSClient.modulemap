@@ -1,0 +1,6 @@
+framework module Pods_LASSClient {
+  umbrella header "Pods-LASSClient-umbrella.h"
+
+  export *
+  module * { export * }
+}

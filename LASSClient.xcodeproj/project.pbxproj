@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		97C9BE615F98BF73CACC5C3C /* Pods_LASSClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0776DD7A04B1434BEFC4AED6 /* Pods_LASSClient.framework */; };
+		FA0B37F41C48EEC700C5BCB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B37F31C48EEC700C5BCB7 /* AppDelegate.swift */; };
+		FA0B37F61C48EEC700C5BCB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B37F51C48EEC700C5BCB7 /* ViewController.swift */; };
+		FA0B37F91C48EEC700C5BCB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0B37F71C48EEC700C5BCB7 /* Main.storyboard */; };
+		FA0B37FB1C48EEC700C5BCB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0B37FA1C48EEC700C5BCB7 /* Assets.xcassets */; };
+		FA0B37FE1C48EEC700C5BCB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0B37FC1C48EEC700C5BCB7 /* LaunchScreen.storyboard */; };
+		FA1662DF1C4E3E0200761BDC /* SensorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1662DE1C4E3E0200761BDC /* SensorInfo.swift */; };
+		FAA619301C4FE3E40023BA4C /* SensorAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6192F1C4FE3E40023BA4C /* SensorAnnotation.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FA001B681E1E840B0040C379 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0776DD7A04B1434BEFC4AED6 /* Pods_LASSClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LASSClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BD9E2B04772C5F2DFC44C9B /* Pods-LASSClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LASSClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-LASSClient/Pods-LASSClient.release.xcconfig"; sourceTree = "<group>"; };
+		6AEDB54F1B1857630FD2A033 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F89D8148308FF5C11668F04F /* Pods-LASSClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LASSClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LASSClient/Pods-LASSClient.debug.xcconfig"; sourceTree = "<group>"; };
+		FA0B37F01C48EEC700C5BCB7 /* LASSClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LASSClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA0B37F31C48EEC700C5BCB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA0B37F51C48EEC700C5BCB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA0B37F81C48EEC700C5BCB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA0B37FA1C48EEC700C5BCB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA0B37FD1C48EEC700C5BCB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA0B37FF1C48EEC700C5BCB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA1662DE1C4E3E0200761BDC /* SensorInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorInfo.swift; sourceTree = "<group>"; };
+		FA9B05DA1C48F06A00C19525 /* CocoaMQTT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaMQTT-Bridging-Header.h"; sourceTree = "<group>"; };
+		FAA6192F1C4FE3E40023BA4C /* SensorAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorAnnotation.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA0B37ED1C48EEC700C5BCB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97C9BE615F98BF73CACC5C3C /* Pods_LASSClient.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		856BA78042E1CE117997E578 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6AEDB54F1B1857630FD2A033 /* Pods.framework */,
+				0776DD7A04B1434BEFC4AED6 /* Pods_LASSClient.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E59C10A4751B7BAC7729CCA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F89D8148308FF5C11668F04F /* Pods-LASSClient.debug.xcconfig */,
+				4BD9E2B04772C5F2DFC44C9B /* Pods-LASSClient.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FA0B37E71C48EEC700C5BCB7 = {
+			isa = PBXGroup;
+			children = (
+				FA0B37F21C48EEC700C5BCB7 /* LASSClient */,
+				FA0B37F11C48EEC700C5BCB7 /* Products */,
+				856BA78042E1CE117997E578 /* Frameworks */,
+				8E59C10A4751B7BAC7729CCA /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		FA0B37F11C48EEC700C5BCB7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA0B37F01C48EEC700C5BCB7 /* LASSClient.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA0B37F21C48EEC700C5BCB7 /* LASSClient */ = {
+			isa = PBXGroup;
+			children = (
+				FA0B37F31C48EEC700C5BCB7 /* AppDelegate.swift */,
+				FA1662DE1C4E3E0200761BDC /* SensorInfo.swift */,
+				FAA6192F1C4FE3E40023BA4C /* SensorAnnotation.swift */,
+				FA0B37F51C48EEC700C5BCB7 /* ViewController.swift */,
+				FA0B37F71C48EEC700C5BCB7 /* Main.storyboard */,
+				FA0B37FA1C48EEC700C5BCB7 /* Assets.xcassets */,
+				FA0B37FC1C48EEC700C5BCB7 /* LaunchScreen.storyboard */,
+				FA0B37FF1C48EEC700C5BCB7 /* Info.plist */,
+				FA9B05DA1C48F06A00C19525 /* CocoaMQTT-Bridging-Header.h */,
+			);
+			path = LASSClient;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA0B37EF1C48EEC700C5BCB7 /* LASSClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA0B38021C48EEC700C5BCB7 /* Build configuration list for PBXNativeTarget "LASSClient" */;
+			buildPhases = (
+				F0CD2902CCB3D585A0B5CB82 /* [CP] Check Pods Manifest.lock */,
+				FA0B37EC1C48EEC700C5BCB7 /* Sources */,
+				FA0B37ED1C48EEC700C5BCB7 /* Frameworks */,
+				FA0B37EE1C48EEC700C5BCB7 /* Resources */,
+				15BBEC6318D6CBC73569A309 /* [CP] Embed Pods Frameworks */,
+				2D45F3E9BB197B59085C92A6 /* [CP] Copy Pods Resources */,
+				FA001B681E1E840B0040C379 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LASSClient;
+			productName = LASSClient;
+			productReference = FA0B37F01C48EEC700C5BCB7 /* LASSClient.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA0B37E81C48EEC700C5BCB7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = formosa;
+				TargetAttributes = {
+					FA0B37EF1C48EEC700C5BCB7 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 8E3PGPZ4T2;
+						LastSwiftMigration = 0820;
+					};
+				};
+			};
+			buildConfigurationList = FA0B37EB1C48EEC700C5BCB7 /* Build configuration list for PBXProject "LASSClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA0B37E71C48EEC700C5BCB7;
+			productRefGroup = FA0B37F11C48EEC700C5BCB7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA0B37EF1C48EEC700C5BCB7 /* LASSClient */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA0B37EE1C48EEC700C5BCB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA0B37FE1C48EEC700C5BCB7 /* LaunchScreen.storyboard in Resources */,
+				FA0B37FB1C48EEC700C5BCB7 /* Assets.xcassets in Resources */,
+				FA0B37F91C48EEC700C5BCB7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15BBEC6318D6CBC73569A309 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LASSClient/Pods-LASSClient-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D45F3E9BB197B59085C92A6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LASSClient/Pods-LASSClient-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0CD2902CCB3D585A0B5CB82 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA0B37EC1C48EEC700C5BCB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA1662DF1C4E3E0200761BDC /* SensorInfo.swift in Sources */,
+				FA0B37F61C48EEC700C5BCB7 /* ViewController.swift in Sources */,
+				FAA619301C4FE3E40023BA4C /* SensorAnnotation.swift in Sources */,
+				FA0B37F41C48EEC700C5BCB7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FA0B37F71C48EEC700C5BCB7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA0B37F81C48EEC700C5BCB7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FA0B37FC1C48EEC700C5BCB7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA0B37FD1C48EEC700C5BCB7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA0B38001C48EEC700C5BCB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA0B38011C48EEC700C5BCB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA0B38031C48EEC700C5BCB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F89D8148308FF5C11668F04F /* Pods-LASSClient.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8E3PGPZ4T2;
+				INFOPLIST_FILE = LASSClient/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.partime-match.LASSClient";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA0B38041C48EEC700C5BCB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BD9E2B04772C5F2DFC44C9B /* Pods-LASSClient.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8E3PGPZ4T2;
+				INFOPLIST_FILE = LASSClient/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.partime-match.LASSClient";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA0B37EB1C48EEC700C5BCB7 /* Build configuration list for PBXProject "LASSClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA0B38001C48EEC700C5BCB7 /* Debug */,
+				FA0B38011C48EEC700C5BCB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA0B38021C48EEC700C5BCB7 /* Build configuration list for PBXNativeTarget "LASSClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA0B38031C48EEC700C5BCB7 /* Debug */,
+				FA0B38041C48EEC700C5BCB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA0B37E81C48EEC700C5BCB7 /* Project object */;
+}
