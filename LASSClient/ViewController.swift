@@ -15,6 +15,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
+    let kStatusTimerSeconds: Double = 60.0
+    
+    var refreshTimer: Timer?
+    
     let kThresholdSpanDelta = 1.0
     let kDefaultSpanDelta = 0.05
     
@@ -23,6 +27,11 @@ class ViewController: UIViewController {
     var currentLocation: CLLocationCoordinate2D!
     var mqtt: CocoaMQTT?
     var sensorInfo = [[String : String]]()
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+        stopRefreshTimer()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +46,8 @@ class ViewController: UIViewController {
         }
         
         self.addNavItem()
+        
+        startRefreshTimer()
     }
 
     override func didReceiveMemoryWarning() {
@@ -105,9 +116,16 @@ class ViewController: UIViewController {
         self.navigationItem.setRightBarButtonItems([refreshButtonItem, locButtonItem] , animated: false)
     }
     
-    // MARK: Navigation Item function
+    func startRefreshTimer() {
+        refreshTimer = Timer.scheduledTimer(timeInterval: kStatusTimerSeconds, target: self, selector: #selector(updateAnnotation), userInfo: nil, repeats: true)
+    }
     
-    func refreshAnnotation(_ sender: UIButton) {
+    func stopRefreshTimer() {
+        refreshTimer?.invalidate()
+        refreshTimer = nil
+    }
+   
+    func updateAnnotation() {
         self.mapView.removeAnnotations(self.mapView.annotations)
         for info in self.sensorInfo {
             if (info["device_id"] == nil || info["s_d0"] == nil || info["gps_lon"] == nil || info["gps_lat"] == nil) {
@@ -159,6 +177,12 @@ class ViewController: UIViewController {
             let annotation = SensorAnnotation(coordinate: myLoc, title: myTitle, subtitle: mySubtitle, deviceid: deviceID, dust: dustG3)
             mapView.addAnnotation(annotation)
         }
+    }
+
+    // MARK: Navigation Item function
+    
+    func refreshAnnotation(_ sender: UIButton) {
+        updateAnnotation()
     }
     
     func setUserLocation(_ sender: UIButton) {
