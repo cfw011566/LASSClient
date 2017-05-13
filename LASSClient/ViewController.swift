@@ -47,6 +47,12 @@ class ViewController: UIViewController {
         
         self.addNavItem()
         
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        mapView.delegate = self
+        
         startRefreshTimer()
     }
 
@@ -261,11 +267,13 @@ extension ViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.locationManager.stopUpdatingLocation()
-        self.currentLocation = locationManager.location!.coordinate
-        self.mapView.setCenter(currentLocation, animated: true)
-        if self.mapView.region.span.latitudeDelta > kThresholdSpanDelta {
-            let coordinateRegion = MKCoordinateRegionMake(currentLocation, MKCoordinateSpan(latitudeDelta: kDefaultSpanDelta, longitudeDelta: kDefaultSpanDelta))
-            self.mapView.setRegion(coordinateRegion, animated: true)
+        self.currentLocation = locationManager.location?.coordinate
+        if (currentLocation != nil) {
+            self.mapView.setCenter(currentLocation, animated: true)
+            if self.mapView.region.span.latitudeDelta > kThresholdSpanDelta {
+                let coordinateRegion = MKCoordinateRegionMake(currentLocation, MKCoordinateSpan(latitudeDelta: kDefaultSpanDelta, longitudeDelta: kDefaultSpanDelta))
+                self.mapView.setRegion(coordinateRegion, animated: true)
+            }
         }
     }
     
