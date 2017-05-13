@@ -15,12 +15,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    let kStatusTimerSeconds: Double = 60.0
+    let kStatusTimerSeconds: Double = 10.0
     
     var refreshTimer: Timer?
     
     let kThresholdSpanDelta = 1.0
-    let kDefaultSpanDelta = 0.05
+    let kDefaultSpanDelta = 0.25
     
     let locationManager = CLLocationManager()
     
@@ -36,21 +36,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        mqttSetting()
-        mqtt!.connect()
-        
         if #available(iOS 9.0, *) {
             // mapView.showsTraffic = true
         } else {
             // Fallback on earlier versions
         }
         
+        NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
+        
         self.addNavItem()
+        
+        mqttSetting()
+        mqtt!.connect()
         
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        // locationManager.startUpdatingLocation()
+        showWholeTaiwan()
+        
         mapView.delegate = self
         
         startRefreshTimer()
@@ -61,6 +66,28 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func showWholeTaiwan() {
+        let centerTaiwan = CLLocationCoordinate2DMake(23.6, 121)
+        self.mapView.setCenter(centerTaiwan, animated: true)
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(centerTaiwan, 250000, 250000)
+        self.mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    // MARK: NSNotification for enterBackground, becomeActive, and others
+    
+    func didBecomeActive() {
+        // print("didBecomeActive")
+        self.mqtt?.connect()
+    }
+    
+    func willResignActive() {
+        // print("willResignActive")
+        self.mqtt?.disconnect()
+        self.mapView.removeAnnotations(self.mapView.annotations)
+        self.sensorInfo.removeAll()
+        self.navigationItem.title = ""
+    }
+    
     // MARK: MQTT
     
     func mqttSetting() {
@@ -133,6 +160,7 @@ class ViewController: UIViewController {
    
     func updateAnnotation() {
         self.mapView.removeAnnotations(self.mapView.annotations)
+        let currentDateTime = Date()
         for info in self.sensorInfo {
             if (info["device_id"] == nil || info["s_d0"] == nil || info["gps_lon"] == nil || info["gps_lat"] == nil) {
                 continue
@@ -173,16 +201,26 @@ class ViewController: UIViewController {
             if ((time.characters.count) <= 5) {
                 time += ":00"
             }
+            
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-            let mydatetime = dateFormatter.date(from: "\(date) \(time)")
-            dateFormatter.timeZone = TimeZone.current
+            var mydatetime = dateFormatter.date(from: "\(date) \(time)")
+            let timeDiff = currentDateTime.timeIntervalSince(mydatetime!)
+            if (timeDiff > 86400) {
+                continue
+            }
+            if (timeDiff > 20000) {
+                dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+                mydatetime = dateFormatter.date(from: "\(date) \(time)")
+                dateFormatter.timeZone = TimeZone.current
+            }
             let mySubtitle = "\(temperature)℃ \(humidity)% [\(dateFormatter.string(from: mydatetime!))]"
             
             let annotation = SensorAnnotation(coordinate: myLoc, title: myTitle, subtitle: mySubtitle, deviceid: deviceID, dust: dustG3)
             mapView.addAnnotation(annotation)
         }
+        // print("count = \(mapView.annotations.count)")
+        self.navigationItem.title = "\(mapView.annotations.count)"
     }
 
     // MARK: Navigation Item function
